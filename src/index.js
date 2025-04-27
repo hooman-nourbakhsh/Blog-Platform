@@ -10,7 +10,7 @@ import "./styles/index.css";
 import "./styles/fonts.css";
 
 const client = new ApolloClient({
-  uri: "https://us-west-2.cdn.hygraph.com/content/cm9x4izrr003h07v2kt5usyqs/master",
+  uri: process.env.REACT_APP_GRAPHCMS_URI,
   cache: new InMemoryCache(),
 });
 
