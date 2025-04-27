@@ -7,7 +7,7 @@ function CardEL({ title, slug, coverPhoto, author }) {
       <CardHeader
         avatar={<Avatar src={author.avatar.url} sx={{ marginLeft: 2 }} />}
         title={
-          <Typography component={"p"} variant="p" color={"primary"}>
+          <Typography component={"p"} variant="p" color={"text.primary"}>
             {author.name}
           </Typography>
         }
@@ -15,7 +15,7 @@ function CardEL({ title, slug, coverPhoto, author }) {
       <CardMedia component={"img"} height={160} image={coverPhoto.url} alt={slug} sx={{ objectFit: "contain" }} />
 
       <CardContent sx={{ minHeight: 60 }}>
-        <Typography component="h3" variant="body1" color="primary" fontWeight={600}>
+        <Typography component="h3" variant="body1" color="text.primary" fontWeight={600}>
           {title}
         </Typography>
       </CardContent>

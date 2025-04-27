@@ -10,7 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/blogs/:slug" element={<BlogPage />} />
-        <Route path="/authors:/:slug" element={<AuthorPage />} />
+        <Route path="/authors/:slug" element={<AuthorPage />} />
       </Routes>
     </Layout>
   );
