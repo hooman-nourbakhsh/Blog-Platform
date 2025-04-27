@@ -1,0 +1,11 @@
+import { useQuery } from "@apollo/client";
+import { GET_BLOGS_INFO } from "../../graphql/queries";
+
+function Blogs() {
+  const { loading, data, error } = useQuery(GET_BLOGS_INFO);
+  if (loading) return <h4>Loading...</h4>;
+  if (error) return <h4>Error....</h4>;
+  return <div>Blogs</div>;
+}
+
+export default Blogs;
