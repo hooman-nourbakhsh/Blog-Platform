@@ -2,6 +2,7 @@ import { useQuery } from "@apollo/client";
 import { Avatar, Divider, Grid, Typography } from "@mui/material";
 import { GET_AUTHORS_INFO } from "../../graphql/queries";
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Authors() {
   const { loading, data, error } = useQuery(GET_AUTHORS_INFO);
@@ -16,10 +17,12 @@ function Authors() {
       {authors.map((author, index) => (
         <React.Fragment key={author.id}>
           <Grid item xs={12} padding={2}>
-            <Avatar src={author.avatar.url} sx={{ marginLeft: 2 }} />
-            <Typography component="p" variant="p" color={"text-secondary"}>
-              {author.name}
-            </Typography>
+            <Link to={`/authors/${author.slug}`} style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
+              <Avatar src={author.avatar.url} sx={{ marginLeft: 2 }} />
+              <Typography component="p" variant="p" color={'secondary'}>
+                {author.name}
+              </Typography>
+            </Link>
           </Grid>
           {index !== authors.length - 1 && (
             <Grid item xs={12}>
