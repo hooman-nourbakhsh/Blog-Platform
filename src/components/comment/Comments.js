@@ -16,7 +16,7 @@ function Comments({ slug }) {
           <Grid item xs={12} key={comment.id} m={2} p={2} border="1px silver solid" borderRadius={1}>
             <Box component="div" display="flex" alignItems="center" mb={3}>
               <Avatar>{comment.name[0]}</Avatar>
-              <Typography component="span" variant="p" fontWeight={700} mr={1}>
+              <Typography component="span" variant="p" fontWeight={700} ml={1}>
                 {comment.name}
               </Typography>
             </Box>
