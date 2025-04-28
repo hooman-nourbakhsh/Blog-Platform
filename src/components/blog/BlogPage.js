@@ -4,6 +4,7 @@ import { Avatar, Box, Container, Grid, Typography } from "@mui/material";
 import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
 import sanitizeHtml from "sanitize-html";
 import Loader from "../shared/Loader";
+import CommentForm from "../comment/CommentForm";
 import { GET_POST_INFO } from "../../graphql/queries";
 
 function BlogPage() {
@@ -39,6 +40,9 @@ function BlogPage() {
         </Grid>
         <Grid item xs={12} mt={5}>
           <div dangerouslySetInnerHTML={{ __html: sanitizeHtml(data.post.content.html) }}></div>
+        </Grid>
+        <Grid item xs={12}>
+          <CommentForm slug={slug} />
         </Grid>
       </Grid>
     </Container>
