@@ -57,7 +57,7 @@ const GET_AUTHOR_INFO = gql`
 
 const GET_POST_INFO = gql`
   query getPost($slug: String!) {
-    posts(where: { slug: $slug }) {
+    post(where: { slug: $slug }) {
       author {
         avatar {
           url
