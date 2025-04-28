@@ -4,12 +4,13 @@ import { GET_AUTHOR_INFO } from "../../graphql/queries";
 import { Avatar, Container, Grid, Typography } from "@mui/material";
 import sanitizeHtml from "sanitize-html";
 import CardEL from "../shared/CardEL";
+import Loader from "../shared/Loader";
 
 function AuthorPage() {
   const { slug } = useParams();
   const { loading, data, error } = useQuery(GET_AUTHOR_INFO, { variables: { slug } });
 
-  if (loading) return <h3>Loading...</h3>;
+  if (loading) return <Loader/>;
   if (error) return <h3>Error...</h3>;
 
   const {
