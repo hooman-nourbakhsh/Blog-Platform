@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { GET_AUTHOR_INFO } from "../../graphql/queries";
 import { Avatar, Container, Grid, Typography } from "@mui/material";
-import sanitizeHtml from "sanitize-html";
+import DOMPurify from 'dompurify';
 import CardEL from "../shared/CardEL";
 import Loader from "../shared/Loader";
 
@@ -10,7 +10,7 @@ function AuthorPage() {
   const { slug } = useParams();
   const { loading, data, error } = useQuery(GET_AUTHOR_INFO, { variables: { slug } });
 
-  if (loading) return <Loader/>;
+  if (loading) return <Loader />;
   if (error) return <h3>Error...</h3>;
 
   const {
@@ -30,7 +30,7 @@ function AuthorPage() {
           </Typography>
         </Grid>
         <Grid item xs={12}>
-          <div dangerouslySetInnerHTML={{ __html: sanitizeHtml(description.html) }}></div>
+          <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(description.html) }}></div>
         </Grid>
         <Grid item xs={12} mt={6}>
           <Typography component="h3" variant="h5" fontWeight={700}>

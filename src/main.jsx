@@ -1,4 +1,3 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
@@ -12,7 +11,7 @@ import "./styles/fonts.css";
 
 import { CacheProvider } from "@emotion/react";
 import createCache from "@emotion/cache";
-import rtlPlugin from 'stylis-plugin-rtl';
+import rtlPlugin from "stylis-plugin-rtl";
 
 const cacheRtl = createCache({
   key: "muirtl",
@@ -20,14 +19,14 @@ const cacheRtl = createCache({
 });
 
 const client = new ApolloClient({
-  uri: process.env.REACT_APP_GRAPHCMS_URI,
+  uri: import.meta.env.VITE_GRAPHCMS_URI,
   cache: new InMemoryCache(),
 });
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <ApolloProvider client={client}>
-    <BrowserRouter>
+    <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <CacheProvider value={cacheRtl}>
         <ThemeProvider theme={theme}>
           <App />

@@ -1,4 +1,3 @@
-import React from "react";
 import { Container, Grid, Typography } from "@mui/material";
 import Authors from "../author/Authors";
 import Blogs from "../blog/Blogs";

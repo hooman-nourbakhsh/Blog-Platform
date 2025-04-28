@@ -14,6 +14,7 @@ A modern, responsive blog platform built with React, GraphQL, and Material UI, i
 
 ## 🛠️ Technologies
 - **Frontend**: React 18.2, Material UI 5, react-router-dom 6
+- **Build Tool**: Vite 5.4
 - **Backend**: Hygraph (GraphQL CMS)
 - **GraphQL**: Apollo Client for queries and mutations
 - **Styling**: Emotion, stylis-plugin-rtl for RTL support
@@ -36,13 +37,13 @@ A modern, responsive blog platform built with React, GraphQL, and Material UI, i
    ```bash
    npm install
    ```
-4. Create a `.env.development.local` file in the root directory and add your Hygraph API endpoint:
+4. Create a `.env` file in the root directory and add your Hygraph API endpoint:
    ```env
    REACT_APP_GRAPHCMS_URI=https://your-hygraph-api-endpoint
    ```
 5. Start the development server:
    ```bash
-   npm start
+   npm run dev
    ```
 
 ## 🎯 Usage
@@ -50,7 +51,7 @@ A modern, responsive blog platform built with React, GraphQL, and Material UI, i
 - **Blog Page**: Shows detailed post content, author info, and a comment section.
 - **Author Page**: Lists author details and their published posts.
 - **Comment Form**: Allows users to submit comments with validation and success notifications.
-- Access the app at `http://localhost:3000` after starting the server.
+- Access the app at `http://localhost:5173` (or the port specified by Vite) after starting the server.
 
 ## 📂 Project Structure
 ```
@@ -72,7 +73,7 @@ src/
 │   ├── index.css             # Global CSS
 ├── fonts/                    # YekanBakh font files
 ├── App.js                    # Main app with routing
-├── index.js                  # Entry point with Apollo, Theme, and RTL setup
+├── main.js                   # Entry point with Apollo, Theme, and RTL setup
 ```
 
 ## 📜 License
