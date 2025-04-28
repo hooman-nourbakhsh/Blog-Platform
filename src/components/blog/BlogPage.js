@@ -5,6 +5,7 @@ import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
 import sanitizeHtml from "sanitize-html";
 import Loader from "../shared/Loader";
 import CommentForm from "../comment/CommentForm";
+import Comments from "../comment/Comments";
 import { GET_POST_INFO } from "../../graphql/queries";
 
 function BlogPage() {
@@ -43,6 +44,9 @@ function BlogPage() {
         </Grid>
         <Grid item xs={12}>
           <CommentForm slug={slug} />
+        </Grid>
+        <Grid item xs={12}>
+          <Comments slug={slug} />
         </Grid>
       </Grid>
     </Container>
